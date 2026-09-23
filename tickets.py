@@ -22,5 +22,18 @@ def add_ticket(filename, ticket_id, title, status, priority):
             writer.writerow(['id', 'title', 'status', 'priority', 'created_at'])
         writer.writerow([ticket_id, title, status, priority, date.today()])
     print(f"Ticket {ticket_id} added successfully.")
+
+    def export_open_tickets(filename, export_filename):
+    """Export open tickets to a new CSV file (ISSUE-3)."""
+    tickets = load_tickets(filename)
+    open_tickets = [t for t in tickets if t['status'] == 'open']
+    
+    with open(export_filename, mode='w', encoding='utf-8', newline='') as file:
+        writer = csv.DictWriter(file, fieldnames=['id', 'title', 'status', 'priority', 'created_at'], delimiter=';')
+        writer.writeheader()
+        writer.writerows(open_tickets)
+    
+    print(f"Exported {len(open_tickets)} open tickets to {export_filename}.")
+
 if __name__ == "__main__":
     print("Ticket Journal System started.")
