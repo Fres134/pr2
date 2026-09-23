@@ -2,6 +2,7 @@ import csv
 import os
 DEFAULT_STATUS = 'open'
 def load_tickets(filename="tickets.csv"):
+    """Load tickets from CSV file."""
     tickets = []
     if not os.path.exists(filename):
         print(f"File {filename} not found.")
@@ -9,6 +10,8 @@ def load_tickets(filename="tickets.csv"):
     with open(filename, mode='r', encoding='utf-8') as file:
         reader = csv.DictReader(file, delimiter=';')
         for row in reader:
+            if row.get('status') == 'new':
+                row['status'] = 'open'
             tickets.append(row)
     return tickets
 
