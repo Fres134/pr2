@@ -1,6 +1,6 @@
 import csv
 import os
-DEFAULT_STATUS = 'new'
+DEFAULT_STATUS = 'open'
 def load_tickets(filename="tickets.csv"):
     tickets = []
     if not os.path.exists(filename):
