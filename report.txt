@@ -1,0 +1,13 @@
+*   975da89 (HEAD -> main, origin/main, origin/HEAD) Merge branch 'feature/ticket-export'
+|\  
+| * b2bcebe docs: document export feature (ISSUE-3)
+| * ff714b7 feat: implement export_open_tickets function (ISSUE-3)
+| * df14f9d test: add test for export open tickets (ISSUE-3)
+|/  
+* 8b054cd docs: document ticket creation feature (ISSUE-1)
+* 73da9e8 feat: implement add_ticket function (ISSUE-1)
+* d573e54 test: add test for ticket creation (ISSUE-1)
+* 8a5dc14 docs: add README and .gitignore
+* 6e3d645 chore: add example data file tickets.csv.example
+* 1764ce1 feat: add tickets.py script for ticket management
+* ed8d457 docs: add README and .gitignore
